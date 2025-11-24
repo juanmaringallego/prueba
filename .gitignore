@@ -1,0 +1,20 @@
+# Archivos compilados
+bin/
+obj/
+*.o
+*.out
+*.exe
+
+# Archivos de depuración
+*.dSYM/
+
+# Archivos de sistema
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
