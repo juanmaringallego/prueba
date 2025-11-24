@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++ Project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Iinclude",
+                "src/*.cpp",
+                "-o",
+                "bin/employee_system.exe",
+                "-Wall",
+                "-Wextra"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila todo el proyecto C++ con los headers en include/"
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "g++ -std=c++17 -Iinclude src/*.cpp -o bin/employee_system.exe && .\\bin\\employee_system.exe",
+            "windows": {
+                "command": "g++ -std=c++17 -Iinclude src/*.cpp -o bin/employee_system.exe; if ($?) { .\\bin\\employee_system.exe }"
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila y ejecuta el programa"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "rm",
+            "args": ["-rf", "bin", "obj"],
+            "windows": {
+                "command": "powershell",
+                "args": ["-Command", "Remove-Item -Recurse -Force bin,obj -ErrorAction SilentlyContinue"]
+            },
+            "group": "build",
+            "detail": "Limpia archivos compilados"
+        }
+    ]
+}

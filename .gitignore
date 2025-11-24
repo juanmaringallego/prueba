@@ -15,6 +15,7 @@ obj/
 *~
 
 # IDEs
-.vscode/
+.vscode/settings.json
+.vscode/*.log
 .idea/
 *.code-workspace
