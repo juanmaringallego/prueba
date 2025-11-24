@@ -71,25 +71,43 @@ prueba/
 
 ### Compilar el Proyecto
 
+#### En Linux/Mac (usando Make):
 ```bash
-# Opción 1: Usando Make (recomendado)
 make              # Compila en modo release
 make debug        # Compila con símbolos de depuración
 make clean        # Limpia archivos compilados
 make help         # Muestra ayuda
+make run          # Compila y ejecuta
+```
 
-# Opción 2: Compilación manual
-g++ -std=c++17 -Iinclude src/*.cpp -o employee_system
+#### En Windows (usando scripts .bat):
+```cmd
+build.bat         # Compila el proyecto
+run.bat           # Compila y ejecuta
+```
+
+#### En VSCode (cualquier plataforma):
+1. Presiona `Ctrl+Shift+B` para compilar
+2. Presiona `F5` para compilar y depurar
+3. O usa el menú: Terminal > Run Build Task
+
+#### Compilación manual:
+```bash
+# Linux/Mac
+g++ -std=c++17 -Iinclude src/*.cpp -o bin/employee_system
+
+# Windows
+g++ -std=c++17 -Iinclude src/*.cpp -o bin/employee_system.exe
 ```
 
 ### Ejecutar el Programa
 
 ```bash
-# Con Make
-make run
-
-# O directamente
+# Linux/Mac
 ./bin/employee_system
+
+# Windows
+bin\employee_system.exe
 ```
 
 ## 🎮 Uso del Sistema
